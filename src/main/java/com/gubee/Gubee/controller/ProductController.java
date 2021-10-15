@@ -4,10 +4,11 @@ import com.gubee.Gubee.model.Product;
 import com.gubee.Gubee.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("api/product")
@@ -17,9 +18,14 @@ public class ProductController {
     ProductService productService;
 
     @GetMapping
-    public ResponseEntity<Product> findProduct(@PathVariable String[] stacks, @PathVariable String target){
+    public ResponseEntity<List<Product>> findProduct(@RequestParam(required = false) ArrayList<String> stacks, @RequestParam(required = false) String target){
 
+        return ResponseEntity.ok().body(productService.findProducts(stacks, target));
+    }
 
-        return null;
+    @PostMapping
+    public ResponseEntity<?> newProduct(@RequestBody Product product){
+        productService.newProduct(product);
+        return ResponseEntity.noContent().build();
     }
 }

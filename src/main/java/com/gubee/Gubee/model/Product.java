@@ -1,24 +1,26 @@
 package com.gubee.Gubee.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
-@Getter @Setter @NoArgsConstructor
+@Getter @Setter @Data @AllArgsConstructor @NoArgsConstructor
 public class Product {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String productName;
     private String simpleDescription;
-    private String fullDescription; //TODO adicionar novos campos
+    private String fullDescription;
     private String target;
-    private String stack; // TODO mudar pra array
+    private LocalDateTime registerDate;
 
+    @ManyToMany(mappedBy = "name",
+            cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE})
+    private List<Stack> stack;
 }
