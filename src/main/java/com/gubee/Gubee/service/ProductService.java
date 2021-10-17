@@ -22,7 +22,7 @@ public class ProductService {
 
     public List<Product> findProducts(ArrayList<String> stacks, String target) {
 
-        return productRepository.findByStackIn(stacks);
+        return productRepository.findByStackInAndTarget(stacks, target);
     }
 
     public void newProduct(Product product){
