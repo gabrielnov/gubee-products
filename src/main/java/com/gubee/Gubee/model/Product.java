@@ -18,9 +18,6 @@ public class Product {
     private String target;
     private LocalDateTime registerDate;
 
-    @ManyToMany(mappedBy = "name",
-            cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE})
-    private List<Stack> stack;
+    @ElementCollection
+    private List<String> stack;
 }

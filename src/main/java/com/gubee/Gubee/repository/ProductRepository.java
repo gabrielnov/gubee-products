@@ -13,5 +13,5 @@ import java.util.List;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
-     List<Product> findByStackIn(Collection<Stack> stacks);
+     List<Product> findByStackIn(Collection<String> stacks);
 }

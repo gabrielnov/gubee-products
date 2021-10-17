@@ -22,16 +22,15 @@ public class ProductService {
 
     public List<Product> findProducts(ArrayList<String> stacks, String target) {
 
-        Collection<Stack> stackCollection = new ArrayList<>();
-        stacks.forEach(s -> {
-            stackCollection.add(new Stack(s));
-        });
-
-        return productRepository.findByStackIn(stackCollection);
+        return productRepository.findByStackIn(stacks);
     }
 
     public void newProduct(Product product){
         product.setRegisterDate(LocalDateTime.now());
         productRepository.save(product);
+
     }
 }
+
+
+
