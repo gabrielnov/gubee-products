@@ -10,7 +10,7 @@ target: simple string (ex.: oracle)
 ```
 
 
-### POST Params:
+### POST Body Payload:
 
 ```
 productName: string
