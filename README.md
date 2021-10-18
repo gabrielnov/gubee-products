@@ -23,11 +23,13 @@ stack: list of strings
 Example:
 
 ```
+{
  "productName":"Great Tech",
     "simpleDescription":"Lorem ipsum",
     "fullDescription":"Lorem ipsum, but longer",
     "target":"oracle",
     "stack":["sql","java","microsoft"]
+}
 ```
 
 ### Routes
