@@ -6,7 +6,7 @@
 ``` 
 stacks: list of strings separated by comma (ex.: stacks=sql,java)  
 
-target: simple string (ex.: oracle)
+target: simple string (ex.: target=oracle)
 ```
 
 
