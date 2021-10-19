@@ -24,11 +24,11 @@ Example:
 
 ```
 {
- "productName":"Great Tech",
+    "productName":"Great Tech",
     "simpleDescription":"Lorem ipsum",
     "fullDescription":"Lorem ipsum, but longer",
     "target":"oracle",
-    "stack":["sql","java","microsoft"]
+    "stack": ["sql","java","microsoft"]
 }
 ```
 
